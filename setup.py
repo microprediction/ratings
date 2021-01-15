@@ -7,7 +7,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name="ratings",
-    version="0.0.4",
+    version="0.0.5",
     description="Elo ratings and generalizations",
     long_description=README,
     long_description_content_type="text/markdown",
