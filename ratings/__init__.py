@@ -1,1 +1,1 @@
-from ratings.elo import elo_expected, elo_update
+from ratings.eloratings import elo_expected, elo_update
