@@ -1,14 +1,13 @@
 
-
-def elo_expected(d:float,f:float=400)->float:
-    """ Expected points scored in a match
+def elo_expected(d :float ,f :float =400 )->float:
+    """ Expected points scored in a match by White player
     :param d:   Difference in rating (Black minus White)
     :param f:   "F"-Factor
-    :return:    Expected points scored by White
+    :return:
     """
-    if d/f>8:
+    if d/ f > 8:
         return 0.0
-    elif d/f<-8:
+    elif d / f < -8:
         return 1.0
     else:
         return 1. / (1 + 10 ** (d / f))
