@@ -8,7 +8,7 @@ README = (HERE / "README.md").read_text()
 setup(
     name="ratings",
     version="0.2.2",
-    description="Basic Elo Rating calculations",
+    description="contest ratings",
     long_description=README,
     long_description_content_type="text/markdown",
     url="https://github.com/microprediction/ratings",
