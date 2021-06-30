@@ -7,7 +7,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name="ratings",
-    version="0.2.8",
+    version="0.2.9",
     description="contests",
     long_description=README,
     long_description_content_type="text/markdown",
