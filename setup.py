@@ -7,8 +7,8 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name="ratings",
-    version="0.2.2",
-    description="contest ratings",
+    version="0.2.4",
+    description="contests",
     long_description=README,
     long_description_content_type="text/markdown",
     url="https://github.com/microprediction/ratings",
@@ -20,7 +20,7 @@ setup(
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.7",
     ],
-    packages=["ratings","ratings.lattice"],
+    packages=["ratings","ratings.lattice","ratings.inference","ratings.classification","ratings.simulation"],
     test_suite='pytest',
     tests_require=['pytest'],
     include_package_data=True,
