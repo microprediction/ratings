@@ -42,8 +42,8 @@ def add_posterior_dividend(df, ability_std:float, idio_std:float, nan_value=NAN_
         assert_inferential_columns(df_contest)
         dividends = df_contest['market_dividend'].values
         performances = center( df_contest['performance'].values )
-        df_contest[col] = std_posterior_dividend(dividends=dividends, ability_std=ability_std, performance_std=performance_std, observations=performances,
-                                                                   nan_value=nan_value, unit=unit, L=L, check_inversion=check_inversion)
+        df_contest[col] = std_posterior_dividend(dividends=dividends, ability_std=ability_std, idio_std=performance_std, observations=performances,
+                                                 nan_value=nan_value, unit=unit, L=L, check_inversion=check_inversion)
         return df_contest
 
     return df.groupby('contest_id').apply(_add_posterior_dividend, ability_std=ability_std,

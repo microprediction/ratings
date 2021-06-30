@@ -5,11 +5,11 @@ import math
 import numpy as np
 
 
-def std_posterior_dividend(dividends:[float], ability_std:float, performance_std:float, observations:[float],
+def std_posterior_dividend(dividends:[float], ability_std:float, idio_std:float, observations:[float],
                            nan_value=NAN_DIVIDEND, unit:float=STD_UNIT, L=STD_L, check_inversion=False):
      centered_observations = [ o-np.nanmean(observations) for o in observations]
      sigma_squared = ability_std*ability_std
-     eps_squared   = performance_std*performance_std
+     eps_squared   = idio_std * idio_std
      prior_std     = math.sqrt( sigma_squared + eps_squared )
      prior_ability = std_dividend_implied_ability( dividends=dividends, scale=prior_std, L=L,unit=unit, nan_value=nan_value )
      if check_inversion:
@@ -28,5 +28,5 @@ def std_posterior_dividend(dividends:[float], ability_std:float, performance_std
 if __name__=='__main__':
     dividends = [2,3,6]
     observations = [0,-1,-0.5]
-    pseudo = std_posterior_dividend(dividends=dividends, ability_std=10, performance_std=2 * math.sqrt(2), observations=observations)
+    pseudo = std_posterior_dividend(dividends=dividends, ability_std=10, idio_std=2 * math.sqrt(2), observations=observations)
     print(pseudo)
