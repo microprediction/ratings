@@ -7,7 +7,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name="ratings",
-    version="0.2.4",
+    version="0.2.5",
     description="contests",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -24,7 +24,7 @@ setup(
     test_suite='pytest',
     tests_require=['pytest'],
     include_package_data=True,
-    install_requires=["wheel","pathlib","numpy>=1.16.5","winning"],
+    install_requires=["wheel","pathlib","numpy>=1.16.5","winning","pandas"],
     entry_points={
         "console_scripts": [
             "ratings=ratings.__main__:main",
