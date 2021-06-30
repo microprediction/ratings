@@ -85,8 +85,11 @@ def add_implied_relative_ability(df, idio_std, nan_value=NAN_DIVIDEND, unit:floa
     assert_inferential_columns(df)
     
     def _add_implied_relative_ability(df_race):
-        dividends = df_race['market_dividend']
-        df_race['implied_relative_ability'] = center(std_dividend_implied_ability(dividends=dividends, nan_value=nan_value, L=L, unit=unit, scale=idio_std))
+        try:
+            dividends = df_race['market_dividend']
+            df_race['implied_relative_ability'] = center(std_dividend_implied_ability(dividends=dividends, nan_value=nan_value, L=L, unit=unit, scale=idio_std))
+        except:
+            df_race['implied_relative_ability'] = [ np.nan for _ in dividends ]
         return df_race
     
     return df.groupby('contest_id').apply(_add_implied_relative_ability)
