@@ -24,7 +24,7 @@ setup(
     test_suite='pytest',
     tests_require=['pytest'],
     include_package_data=True,
-    install_requires=["wheel","pathlib","numpy>=1.16.5","winning","pandas"],
+    install_requires=["wheel","pathlib","numpy>=1.16.5","winning","pandas","stochastic"],
     entry_points={
         "console_scripts": [
             "ratings=ratings.__main__:main",
